@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mario Game</title>
+    <style>
+        #game-container {
+            position: relative;
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+            background: linear-gradient(to top, #2e8b57, #87CEEB); /* Green grass, blue sky */
+            border: 2px solid black;
+        }
+        
+        #mario {
+            position: absolute;
+            bottom: 20px;
+            left: 50px; /* Mario starts at left position 50px */
+            width: 50px;
+            height: 70px;
+            background-color: red; /* Mario's red color */
+            z-index: 10; /* Ensure Mario is above other elements */
+        }
+
+        #coin {
+            position: absolute;
+            bottom: 30px;
+            left: 300px;
+            width: 30px;
+            height: 30px;
+            background-color: yellow; /* Coin's color */
+            z-index: 5; /* Ensure coin is behind Mario */
+        }
+
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            color: white;
+            z-index: 20; /* Ensure score is always visible */
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="mario"></div>
+        <div id="coin"></div>
+        <div id="score">Score: 0</div>
+        <audio id="jump-sound" src="jump-sound.mp3" preload="auto"></audio>
+        <audio id="coin-sound" src="coin-sound.mp3" preload="auto"></audio>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
